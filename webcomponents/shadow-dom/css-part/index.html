@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow DOM & CSS</title>
+    <script src="counter-element.js" type="module"></script>
+    <style>
+        html {
+            --counter-color: green
+        }
+        p { color: red }
+
+        my-counter::part(btn-inc) {
+            background-color: red;
+        }
+        my-counter::part(btn-dec) {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<p>Les boutons sont personalisés via :part</p>
+<my-counter>
+    <span slot="title">Nombre:</span>
+</my-counter>
+</body>
+</html>
